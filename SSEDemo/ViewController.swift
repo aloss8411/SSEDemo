@@ -40,7 +40,6 @@ final class ViewController: UIViewController, ObservableObject {
         setUpBtns()
         setUpTable()
         
-        print("Test Github")
     }
     
     func setUpTable() {
