@@ -39,6 +39,8 @@ final class ViewController: UIViewController, ObservableObject {
         setUpTextField()
         setUpBtns()
         setUpTable()
+        
+        print("Test Github")
     }
     
     func setUpTable() {
