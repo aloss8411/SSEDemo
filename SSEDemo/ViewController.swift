@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
+import EventSource
+import Starscream
 
 final class ViewController: UIViewController, ObservableObject {
     
@@ -230,3 +233,102 @@ class Cell: UITableViewCell {
         timeStamp.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
     }
 }
+
+
+
+
+
+///EventSource Usage
+//class ViewController: UIViewController {
+//    
+//    private var eventSource: EventSource! = nil
+//    
+//    override func viewDidLoad() {
+//        establishSSEConnection()
+//    }
+//    
+//    func establishSSEConnection() {
+//        //put url in here
+//        if let url = URL(string: "") {
+//            Task {
+//                do {
+//                    try await connectSSE(url: url)
+//                } catch {
+//                    print("Failed to establish SSE connection: \(error)")
+//                }
+//            }
+//        }
+//    }
+//    
+//    func connectSSE(url: URL) async throws {
+//        let request = URLRequest(url: url)
+//        self.eventSource = EventSource(request: request)
+//        self.eventSource?.connect()
+//        
+//        for await event in self.eventSource.events  {
+//            switch event {
+//            case .open:
+//                print("Connection was opened.")
+//            case .error(let error):
+//                print("Received an error: \(error.localizedDescription)")
+//            case .message(let message):
+//                print("Received a message: \(message.data ?? "")")
+//            case .closed:
+//                print("Connection was closed.")
+//            }
+//        }
+//    }
+//
+//}
+
+//StarScream
+//class ViewController: UIViewController, WebSocketDelegate {
+//    
+//    var socket: WebSocket! = nil
+//    
+//    override func viewDidLoad() {
+//        establishSSE()
+//    }
+//    
+//    func establishSSE() {
+//        //Note: Enter URL String in here
+//        var request = URLRequest(url: URL(string: "")!)
+////        request.setValue("", forHTTPHeaderField: "") //if need
+//        request.timeoutInterval = 3
+//        socket = WebSocket(request: request)
+//        socket.delegate = self
+//        
+//        ///這個設定可以考慮是否打開，這是WebSocket所以會自動Pong回去
+////        socket.respondToPingWithPong = false
+//        
+//        socket.connect()
+//        
+//    }
+//    
+//    func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
+//        switch event {
+//            case .connected(let headers):
+//                print("websocket is connected: \(headers)")
+//            case .disconnected(let reason, let code):
+//                print("websocket is disconnected: \(reason) with code: \(code)")
+//            case .text(let string):
+//                print("Received text: \(string)")
+//            case .binary(let data):
+//                print("Received data: \(data.count)")
+//            case .ping(_):
+//                break
+//            case .pong(_):
+//                break
+//            case .viabilityChanged(_):
+//                break
+//            case .reconnectSuggested(_):
+//                break
+//            case .cancelled:
+//                print("websocket is canceled")
+//            case .error(let error):
+//                print("error:\(String(describing: error))")
+//            case .peerClosed:
+//                break
+//            }
+//    }
+//}

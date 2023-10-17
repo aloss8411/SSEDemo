@@ -13,6 +13,8 @@
 		441D88822ADBB55C00BC7C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441D88802ADBB55C00BC7C93 /* Main.storyboard */; };
 		441D88842ADBB55E00BC7C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441D88832ADBB55E00BC7C93 /* Assets.xcassets */; };
 		441D88872ADBB55E00BC7C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441D88852ADBB55E00BC7C93 /* LaunchScreen.storyboard */; };
+		4426B2E02ADEDF4400BF6F36 /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 4426B2DF2ADEDF4400BF6F36 /* EventSource */; };
+		4426B2E52ADEE9CC00BF6F36 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 4426B2E42ADEE9CC00BF6F36 /* Starscream */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4426B2E02ADEDF4400BF6F36 /* EventSource in Frameworks */,
+				4426B2E52ADEE9CC00BF6F36 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = SSEDemo;
+			packageProductDependencies = (
+				4426B2DF2ADEDF4400BF6F36 /* EventSource */,
+				4426B2E42ADEE9CC00BF6F36 /* Starscream */,
+			);
 			productName = SSEDemo;
 			productReference = 441D88772ADBB55C00BC7C93 /* SSEDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,10 @@
 				Base,
 			);
 			mainGroup = 441D886E2ADBB55C00BC7C93;
+			packageReferences = (
+				4426B2DE2ADEDF4400BF6F36 /* XCRemoteSwiftPackageReference "EventSource" */,
+				4426B2E32ADEE9CC00BF6F36 /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 441D88782ADBB55C00BC7C93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +375,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4426B2DE2ADEDF4400BF6F36 /* XCRemoteSwiftPackageReference "EventSource" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Recouse/EventSource";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+		4426B2E32ADEE9CC00BF6F36 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4426B2DF2ADEDF4400BF6F36 /* EventSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4426B2DE2ADEDF4400BF6F36 /* XCRemoteSwiftPackageReference "EventSource" */;
+			productName = EventSource;
+		};
+		4426B2E42ADEE9CC00BF6F36 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4426B2E32ADEE9CC00BF6F36 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 441D886F2ADBB55C00BC7C93 /* Project object */;
 }
